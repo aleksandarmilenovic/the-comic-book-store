@@ -13,7 +13,9 @@ session_start();
   <body>
   <header>
     <nav>
-      <ul>
+      <ul><div id = "slika">
+        <li><img src="logo.png" width="50" height="35"></li>
+          </div>
         <li><a href="index.php">HOME</a></li>
         <?php
         if(isset($_SESSION['id'])){
