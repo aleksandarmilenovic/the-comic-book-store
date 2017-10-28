@@ -14,6 +14,7 @@ if(!$row = $resut->fetch_assoc()){
   $_SESSION['id']= $row['id'];
   $_SESSION['privilegue'] = $row['privilegue'];
   $_SESSION['email'] = $row['email'];
+  $_SESSION['uid'] = $row['uid'];
 }
 header("Location: ../index.php");
 

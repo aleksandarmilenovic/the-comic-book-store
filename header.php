@@ -24,6 +24,8 @@ include 'dbh.php';
           </form>";
           if($_SESSION['privilegue'] == 1){
             echo "<li><a href='admin.php'>ADMIN</a></li>";
+          }else{
+            echo "<li><a href='makeREQUEST.php'>MAKE REQUEST</a></li>";
           }
         }else {
           echo "<form action='includes/login.inc.php' method='POST'>

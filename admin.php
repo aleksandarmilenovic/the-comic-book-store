@@ -2,11 +2,17 @@
 
 include 'header.php';
 
-$sql = "SELECT * FROM login";
+echo "<form action='serch.php' method='POST'>
+      <input type='text' name='search'>
+      <button type='submit' name='button'>SEARCH</button>
+      </form><br>";
 
-$resut = $conn->query($sql);
+echo "<form  action='privileges.php' method='POST'>
+      <button type='submit' name='button'>PRIVILEGUES</button>
+      </form><br>";
 
-while($row = $resut->fetch_assoc()){
- echo $row['first'];
-}
- ?>
+echo "<form  action='requests.php' method='POST'>
+      <button type='submit' name='button'>REQUESTS</button>
+      </form><br>";
+
+       ?>

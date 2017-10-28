@@ -1,19 +1,7 @@
 <?php
 include 'header.php';
-
-
-
-if(isset($_SESSION['id'])){
-if($_SESSION['privilegue'] == 1){
-
-}else {
-
-}
-
-}else {
-
-}
-$sql = "SELECT * FROM comicbook";
+$data = $_POST['search'];
+$sql = "SELECT * FROM comicbook WHERE ime LIKE '%".$data."%'";
 $resut = $conn->query($sql);
 while($row = $resut->fetch_assoc()){
 echo "<form  method= 'POST'>
@@ -23,7 +11,5 @@ echo "<form  method= 'POST'>
     <p>".$row['brstrana']."</p>
     <p>".$row['opis']."</p>
 </form><br>";
-
 }
-
  ?>
