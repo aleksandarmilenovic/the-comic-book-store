@@ -12,7 +12,10 @@ if(!$row = $resut->fetch_assoc()){
   echo "wrong";
 }else{
   $_SESSION['id']= $row['id'];
+  $_SESSION['privilegue'] = $row['privilegue'];
+  $_SESSION['email'] = $row['email'];
 }
 header("Location: ../index.php");
+
 
  ?>
