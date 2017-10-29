@@ -15,4 +15,8 @@ echo "<form  action='requests.php' method='POST'>
       <button type='submit' name='button'>REQUESTS</button>
       </form><br>";
 
-       ?>
+echo "<form  action='addNew.php' method='POST'>
+      <button type='submit' name='button'>NEW COMICBOOK</button>
+      </form><br>";
+
+  ?>
