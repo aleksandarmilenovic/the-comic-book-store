@@ -37,6 +37,7 @@ include 'dbh.php';
         }
 
          ?>
+         <li><a href="showRequests.php">REQUESTS</a></li>
       </ul>
     </nav>
   </header>

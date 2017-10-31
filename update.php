@@ -13,10 +13,15 @@ for($i = 0;$i < 100;$i++){
           $resut = $conn->query($sql);
     }
     if (isset($_REQUEST['DISAPROVE'.$i])) {
-            $comicbook = $_POST['comicbook'.$i];
-            $sql = "UPDATE request SET  aproval = '$disaprove' WHERE comicbook = '$comicbook'";
-            $resut = $conn->query($sql);
-      }
+          $comicbook = $_POST['comicbook'.$i];
+          $sql = "UPDATE request SET  aproval = '$disaprove' WHERE comicbook = '$comicbook'";
+          $resut = $conn->query($sql);
+    }
+    if (isset($_REQUEST['DELETE'.$i])) {
+      $comicbook = $_POST['comicbook'.$i];
+      $sql = "DELETE FROM request WHERE comicbook = '$comicbook'";
+      $resut = $conn->query($sql);
+    }
 }
 
 header("Location: requests.php");
