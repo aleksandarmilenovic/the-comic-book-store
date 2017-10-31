@@ -52,3 +52,14 @@ nav ul  form button{
   #xxx{
     float: right;
   }
+
+  #omot{
+    width: 700px;
+    margin: auto;
+
+  }
+  .strip{
+    float: left;
+    margin-right: 30px;
+    height: 430px;
+  }

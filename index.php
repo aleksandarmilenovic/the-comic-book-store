@@ -15,15 +15,23 @@ if($_SESSION['privilegue'] == 1){
 }
 $sql = "SELECT * FROM comicbook";
 $resut = $conn->query($sql);
+echo "<div id = 'omot'>";
+$br = 0;
 while($row = $resut->fetch_assoc()){
-echo "<form method= 'POST'>
+echo "<div class = 'strip'> <form action = 'addToCart.php' method= 'POST'>
     <img src=".$row['slika']."   width=200 height=300>
     <p>".$row['ime']."</p>
+    <input type='hidden' name='ime".$br."' value='".$row['ime']."'>
     <p>".$row['godina']."</p>
     <p>".$row['brstrana']."</p>
     <p>".$row['opis']."</p>
-</form>";
+    <p>".$row['cena']."</p>
+    <input type='hidden' name='cena".$br."' value = ".$row['cena'].">
+    <input type='text' name='count".$br."' size = '10'>
+    <input type='submit' name='buy".$br."' value='BUY'>
+</form>
+</div>";
 
 }
-
+echo "</div>";
  ?>
