@@ -15,6 +15,7 @@ $resut = $conn->query($sql);
 $price  = 0;
 $string = "";
 $i = "";
+echo $mail;
 
 while($row = $resut->fetch_assoc()){
   $i = "<table border = '1'>
@@ -42,7 +43,8 @@ while($row = $resut->fetch_assoc()){
   $price  = $price + $row['count']*$row['price'];
   $string = $string.$i;
 }
-
+$string = $string."<p>TOTAL:".$price."</p>";
+$string = $string."<p>TOTAL:".$i."</p>";
 $mail = new PHPMailer();
 $mail ->IsSmtp();
 $mail ->SMTPDebug = 1;
@@ -51,12 +53,12 @@ $mail ->SMTPSecure = 'ssl';
 $mail ->Host = "smtp.gmail.com";
 $mail ->Port = 465; // 587
 $mail ->IsHTML(true);
-$mail ->Username = "aleksandarmilenovic5@gmail.com";
-$mail ->Password = "Aleksanda";
-$mail ->SetFrom("aleksandarmilenovic5@gmail.com");
+$mail ->Username = "thecomicbookstore276@gmail.com";
+$mail ->Password = "PPeerroo";
+$mail ->SetFrom("thecomicbookstore276@gmail.com");
 $mail ->Subject = $mailSUB;
 $mail ->Body = $string;
-$mail ->AddAddress($mail);
+$mail ->AddAddress($_SESSION['email']);
 
 if(!$mail ->Send()){
   echo "not send";
@@ -64,4 +66,8 @@ if(!$mail ->Send()){
   echo "sent";
 }
 
+$sql = "DELETE FROM cart WHERE username = '$username'";
+$resut = $conn->query($sql);
+
+header("Location: index.php");
  ?>
