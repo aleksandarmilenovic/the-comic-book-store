@@ -15,12 +15,21 @@ while($row = $resut->fetch_assoc()){
     <input type='hidden' name='prezime".$br."' value='".$row['last']."'>
     <input type='hidden' name='username".$br."' value='".$row['uid']."'>
     <input type='hidden' name='sifra".$br."' value='".$row['pwd']."'>
-    <input type='hidden' name='email".$br."' value='".$row['email']."'>
-    <input type='text' name='privilegue".$br."' placeholder='".$row['privilegue']."'>
-    <input type='submit' name='dugme".$br."' value='Change privilegue'/>
+    <input type='hidden' name='email".$br."' value='".$row['email']."'>";
+    if($row['privilegue'] == 0){
+      echo "<select name = 'privilegue".$br."'>
+        <option value='korisnik'>korisnik</option>
+        <option value='admin'>admin</option>
+      </select>";
+    }else {
+      echo "<select name = 'privilegue".$br."'>
+        <option value='admin'>admin</option>
+          <option value='korisnik'>korisnik</option>
+      </select>";
+    }
+  echo "<input type='submit' name='dugme".$br."' value='Change privilegue'/>
   </form>";
   $br = $br+1;
 }
-
 
  ?>

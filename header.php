@@ -38,6 +38,7 @@ include 'dbh.php';
 
          ?>
          <li><a href="showRequests.php">REQUESTS</a></li>
+          <li><a href="cart.php">CART</a></li>
       </ul>
     </nav>
   </header>

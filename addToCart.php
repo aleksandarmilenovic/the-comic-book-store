@@ -5,6 +5,10 @@ include 'header.php';
 $username = $_SESSION['uid'];
 $kolicina = " ";
 $comicbook = "";
+$godina = "";
+$brstrana = "";
+$opis = "";
+$slika = "";
 
 for($i = 0;$i < 1000;$i++){
 
@@ -12,6 +16,10 @@ for($i = 0;$i < 1000;$i++){
         $kolicina = $_POST['count'.$i];
         $comicbook = $_POST['ime'.$i];
         $price = $_POST['cena'.$i];
+        $godina =  $_POST['godina'.$i];
+        $brstrana = $_POST['brstrana'.$i];
+        $opis = $_POST['opis'.$i];
+        $slika = $_POST['slika'.$i];
       }
 
 }
@@ -19,7 +27,8 @@ echo $kolicina."<br>";
 echo $comicbook."<br>";
 echo $price."<br>";
 
-$sql = "INSERT INTO cart (username,comicbook,count,price) VALUES ('$username','$comicbook','$kolicina','$price')";
+$sql = "INSERT INTO cart (username,comicbook,count,price,godina,brstrana,opis,slika) VALUES ('$username','$comicbook','$kolicina','$price',
+'$godina','$brstrana','$opis','$slika')";
 $resut = $conn->query($sql);
 
 header("Location: index.php");

@@ -12,8 +12,14 @@ for($i = 0; $i < 100;$i++){
 }
 echo $email;
 echo $privilegue;
+$privilegue1 = "";
+if($privilegue == 'admin'){
+  $privilegue1 = 1;
+}else {
+  $privilegue1 = 0;
+}
 
-$sql = "UPDATE login SET  privilegue = $privilegue WHERE email = '$email'";
+$sql = "UPDATE login SET  privilegue = $privilegue1 WHERE email = '$email'";
 $resut = $conn->query($sql);
 if ($conn->query($sql) === TRUE) {
     echo "Record updated successfully";

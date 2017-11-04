@@ -22,6 +22,10 @@ echo "<div class = 'strip'> <form action = 'addToCart.php' method= 'POST'>
     <img src=".$row['slika']."   width=200 height=300>
     <p>".$row['ime']."</p>
     <input type='hidden' name='ime".$br."' value='".$row['ime']."'>
+    <input type='hidden' name='godina".$br."' value='".$row['godina']."'>
+    <input type='hidden' name='brstrana".$br."' value='".$row['brstrana']."'>
+    <input type='hidden' name='opis".$br."' value='".$row['opis']."'>
+    <input type='hidden' name='slika".$br."' value='".$row['slika']."'>
     <p>".$row['godina']."</p>
     <p>".$row['brstrana']."</p>
     <p>".$row['opis']."</p>
