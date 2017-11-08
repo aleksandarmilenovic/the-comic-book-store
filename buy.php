@@ -44,7 +44,6 @@ while($row = $resut->fetch_assoc()){
   $string = $string.$i;
 }
 $string = $string."<p>TOTAL:".$price."</p>";
-$string = $string."<p>TOTAL:".$i."</p>";
 $mail = new PHPMailer();
 $mail ->IsSmtp();
 $mail ->SMTPDebug = 1;
