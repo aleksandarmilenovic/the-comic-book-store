@@ -22,7 +22,9 @@ $i = "";
 <div style="width:200px; margin:auto; margin-top:50px;">
 
 <?php
+$br = 0;
 while($row = $resut->fetch_assoc()){
+  $br  = $br +1;
   $sve= $row['count'] * $row['price'];
   $i = "<table border = '1'>
           <tr>
@@ -70,6 +72,11 @@ while($row = $resut->fetch_assoc()){
              <td colspan = '3'>CENA".$sve."</td>
           </tr>
        </table>";
+  echo "<form action='deleteItem.php' method='POST'>
+  <input type='hidden' name='comicbook".$br."' value='".$row['comicbook']."'>
+  <input type='submit' name='delete".$br."' value='Delete Item'>
+  </form>";
+
 }
 if($price != 0){
   echo " <form action='buy.php' method='post'>
