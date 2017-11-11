@@ -1,6 +1,7 @@
 <?php
 include 'header.php';
 $data = $_POST['search'];
+if($data != ""){
 $sql = "SELECT * FROM comicbook WHERE ime LIKE '%".$data."%'";
 $resut = $conn->query($sql);
 echo "<div id = 'omot'>";
@@ -14,5 +15,8 @@ echo "<div class = 'strip'> <form method= 'POST'>
 </form>
 </div>";
 
+}
+}else {
+  echo "NISTE UNELI NISTA";
 }
  ?>

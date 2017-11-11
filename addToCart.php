@@ -2,6 +2,11 @@
 
 include 'header.php';
 
+if(!isset($_SESSION['id'])){
+  echo "Morate biti ulogovani!!!!";
+}else {
+
+
 $username = $_SESSION['uid'];
 $kolicina = " ";
 $comicbook = "";
@@ -23,9 +28,6 @@ for($i = 0;$i < 1000;$i++){
       }
 
 }
-echo $kolicina."<br>";
-echo $comicbook."<br>";
-echo $price."<br>";
 
 $sql = "INSERT INTO cart (username,comicbook,count,price,godina,brstrana,opis,slika) VALUES ('$username','$comicbook','$kolicina','$price',
 '$godina','$brstrana','$opis','$slika')";
@@ -33,4 +35,5 @@ $resut = $conn->query($sql);
 
 header("Location: index.php");
 
+}
  ?>

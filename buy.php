@@ -18,32 +18,33 @@ $i = "";
 echo $mail;
 
 while($row = $resut->fetch_assoc()){
+  $sve = $row['price'] * $row['count'];
   $i = "<table border = '1'>
           <tr>
              <td rowspan = '6'>  <img src='".$row['slika']."'   width=200 height=300></td>
-             <td>".$row['comicbook']."</td>
+             <td>IME :".$row['comicbook']."</td>
           </tr>
           <tr>
-             <td>".$row['godina']."</td>
+             <td>GODINA PROIZVODNJE:".$row['godina']."</td>
 
           </tr>
           <tr>
-             <td colspan = '3'>".$row['opis']."</td>
+             <td colspan = '3'>OPIS STRIPA:".$row['opis']."</td>
           </tr>
           <tr>
-             <td colspan = '3'>".$row['brstrana']."</td>
+             <td colspan = '3'>BROJ STRANA:".$row['brstrana']."</td>
           </tr>
           <tr>
-             <td colspan = '3'>".$row['count']."</td>
+             <td colspan = '3'>KOLICINA:".$row['count']."</td>
           </tr>
           <tr>
-             <td colspan = '3'>".$row['price']."</td>
+             <td colspan = '3'>CENA:".$sve."</td>
           </tr>
        </table>";
   $price  = $price + $row['count']*$row['price'];
   $string = $string.$i;
 }
-$string = $string."<p>TOTAL:".$price."</p>";
+$string = $string."<p>UKUPNA CENA:".$price."</p>";
 $mail = new PHPMailer();
 $mail ->IsSmtp();
 $mail ->SMTPDebug = 1;
@@ -68,5 +69,9 @@ if(!$mail ->Send()){
 $sql = "DELETE FROM cart WHERE username = '$username'";
 $resut = $conn->query($sql);
 
-header("Location: index.php");
+
  ?>
+
+ <?php
+header("Location: index.php");
+  ?>
