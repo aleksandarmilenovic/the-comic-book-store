@@ -14,7 +14,7 @@ $godina = "";
 $brstrana = "";
 $opis = "";
 $slika = "";
-
+echo $username;
 for($i = 0;$i < 1000;$i++){
 
       if(isset($_REQUEST['buy'.$i])){
@@ -29,11 +29,32 @@ for($i = 0;$i < 1000;$i++){
 
 }
 
-$sql = "INSERT INTO cart (username,comicbook,count,price,godina,brstrana,opis,slika) VALUES ('$username','$comicbook','$kolicina','$price',
-'$godina','$brstrana','$opis','$slika')";
-$resut = $conn->query($sql);
+$sql1 = "SELECT * FROM cart WHERE comicbook = '$comicbook' AND username = '$username'";
+$resut1 = $conn ->query($sql1);
+$priceP = 0;
+$countP = 0;
+while($row = $resut1->fetch_assoc()){
 
-header("Location: index.php");
+$priceP = $priceP + $row['price'];
+$countP = $countP + $row['count'];
+
+}
+
+if($priceP > 0){
+$priceP = $priceP + $price;
+$countP = $countP + $kolicina;
+  $sql2 = "UPDATE cart SET price = $priceP,count = $countP WHERE username = '$username' AND comicbook = '$comicbook'";
+  $r = $conn ->query($sql2);
+
+}else {
+$cena = $price*$kolicina;
+  $sql = "INSERT INTO cart (username,comicbook,count,price,godina,brstrana,opis,slika) VALUES ('$username','$comicbook','$kolicina','$cena',
+  '$godina','$brstrana','$opis','$slika')";
+  $r2 = $conn->query($sql);
+
+}
+
+//header("Location: index.php");
 
 }
  ?>
