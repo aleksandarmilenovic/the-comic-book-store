@@ -4,6 +4,12 @@ include 'header.php';
 $sql = "SELECT * from login";
 $resut = $conn->query($sql);
 $br = 0;
+?>
+
+<body style="background-image: url('F.jpeg');background-repeat: no-repeat;background-size: 100%;">
+<div id="omotSearch">
+
+<?php
 while($row = $resut->fetch_assoc()){
   echo "<form action='changeP.php' method='POST'>
   <p>NAME: ".$row['first']."</p>
@@ -33,3 +39,5 @@ while($row = $resut->fetch_assoc()){
 }
 
  ?>
+</div>
+</body>

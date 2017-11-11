@@ -16,7 +16,12 @@ $resut = $conn->query($sql);
 $price  = 0;
 $string = "";
 $i = "";
+?>
 
+<body style='background-color:#4286f4;'>
+<div style="width:200px; margin:auto; margin-top:50px;">
+
+<?php
 while($row = $resut->fetch_assoc()){
   $sve= $row['count'] * $row['price'];
   $i = "<table border = '1'>
@@ -75,3 +80,5 @@ if($price != 0){
 
 }
  ?>
+</div>
+</body>

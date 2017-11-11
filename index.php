@@ -15,7 +15,7 @@ if($_SESSION['privilegue'] == 1){
 }
 $sql = "SELECT * FROM comicbook";
 $resut = $conn->query($sql);
-echo "<div id = 'omot'>";
+echo "<body style='background-color:#4286f4;'><div id = 'omot'>";
 $br = 0;
 while($row = $resut->fetch_assoc()){
 echo "<div class = 'strip'> <form action = 'addToCart.php' method= 'POST'>
@@ -42,5 +42,5 @@ echo "<div class = 'strip'> <form action = 'addToCart.php' method= 'POST'>
 </div>";
 
 }
-echo "</div>";
+echo "</div></body>";
  ?>

@@ -5,6 +5,12 @@ include 'header.php';
 $sql = "SELECT * FROM request";
 $resut = $conn->query($sql);
 $br = 0;
+?>
+
+<body style="background-image: url('F.jpeg');background-repeat: no-repeat;background-size: 100%;">
+<div id="omotSearch">
+
+<?php
 while($row =$resut->fetch_assoc()){
   if($row['aproval'] == 'CEKA SE'){
   echo "<form action='update.php' method='POST'>
@@ -21,3 +27,5 @@ $br = $br + 1;
 }
 
  ?>
+</div>
+</body>

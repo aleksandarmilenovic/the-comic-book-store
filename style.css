@@ -56,10 +56,63 @@ nav ul  form button{
   #omot{
     width: 700px;
     margin: auto;
-
+    padding-top:50px;
   }
   .strip{
     float: left;
     margin-right: 30px;
     height: 430px;
+    margin-bottom:30px;
   }
+#omotSignUp {
+  width:720px;
+  margin:auto;
+}
+#omotSignUp2 {
+  width:620px;
+  border:0px solid #000;
+  border-radius: 10px;
+  /*background-color:green;
+  background-color:rgba(0, 0, 0, 0.5);*/
+  margin-top:150px;
+  padding:50px;
+  padding-top:100px;
+  padding-bottom:100px;
+  opacity: 0.8;
+}
+#omotSignUp2 input {
+  width:600px;
+  height:40px;
+  margin-bottom:5px;
+}
+#omotSignUp2 button {
+  margin-left:255px;
+
+}
+#omotShowRequests,#omotSearch {
+  width:700px;
+  margin:auto;
+  min-height:100px;
+  padding:25px;
+  border:2px solid #000;
+  border-radius: 10px;
+  margin-top:50px;
+  background-color:white;
+  opacity:0.4;
+}
+#omotAdmin {
+  width:400px;
+  margin:auto;
+  margin-top:250px;
+
+  height:200px;
+  padding:25px;
+  border:2px solid #000;
+  border-radius: 10px;
+  background-color:white;
+  opacity:0.8;
+
+}
+#omotSearch{
+  opacity:0.8;
+}

@@ -1,6 +1,12 @@
 <?php
 include 'header.php';
 
+?>
+
+<body style="background-image: url('marvel.jpeg');background-repeat: no-repeat;background-size: 100%;">
+<div id="omotSearch" style="margin-top:150px;">
+
+<?php
 echo "<p>ADD NEW COMICBOOK</p>";
 
 echo "<form action='insert.php' method='post' enctype='multipart/form-data'><br>
@@ -15,3 +21,5 @@ echo "<form action='insert.php' method='post' enctype='multipart/form-data'><br>
 </form>";
 
  ?>
+</div>
+</body>
