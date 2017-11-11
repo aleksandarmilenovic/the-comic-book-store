@@ -3,7 +3,7 @@ include 'header.php';
 
 ?>
 
-<body style="background-image: url('marvel.jpeg');background-repeat: no-repeat;background-size: 100%;">
+<body style="background-image: url('WM.jpg');background-repeat: no-repeat;background-size: 100%;">
 <div id="omotSearch" style="margin-top:150px;">
 
 <?php

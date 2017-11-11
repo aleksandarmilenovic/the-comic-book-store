@@ -7,7 +7,7 @@ $resut = $conn->query($sql);
 $br = 0;
 ?>
 
-<body style="background-image: url('F.jpeg');background-repeat: no-repeat;background-size: 100%;">
+<body style="background-image: url('F.jpg');background-repeat: no-repeat;background-size: 100%;">
 <div id="omotSearch">
 
 <?php
