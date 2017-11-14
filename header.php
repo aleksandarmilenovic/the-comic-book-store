@@ -9,6 +9,9 @@ include 'dbh.php';
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script type="text/javascript" src="script.js"></script>
+      
   </head>
   <body>
   <header>

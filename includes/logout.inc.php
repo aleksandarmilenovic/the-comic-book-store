@@ -1,5 +1,9 @@
 <?php
 session_start();
 session_destroy();
-header("Location: ../index.php");
+
  ?>
+ <script type="text/javascript">
+ alert("Uspesno ste se odjavili!");
+ window.location.href = "../index.php";
+ </script>

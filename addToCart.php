@@ -4,16 +4,23 @@ include 'header.php';
 
 if(!isset($_SESSION['id'])){
   echo "Morate biti ulogovani!!!!";
+  ?>
+  <script type="text/javascript">
+  window.location.href = "index.php";
+  alert("Morate biti ulogovani!!!");
+  </script>
+  <?php
 }else {
 
 
 $username = $_SESSION['uid'];
-$kolicina = " ";
+$kolicina = 0;
 $comicbook = "";
 $godina = "";
 $brstrana = "";
 $opis = "";
 $slika = "";
+$price = 0;
 echo $username;
 for($i = 0;$i < 1000;$i++){
 
@@ -41,20 +48,32 @@ $countP = $countP + $row['count'];
 }
 
 if($priceP > 0){
-$priceP = $priceP + $price;
+  $tmpCena = $kolicina * $price;
+$priceP = $priceP + $tmpCena;
 $countP = $countP + $kolicina;
-  $sql2 = "UPDATE cart SET price = $priceP,count = $countP WHERE username = '$username' AND comicbook = '$comicbook'";
+  $sql2 = "UPDATE cart SET count = $countP WHERE username = '$username' AND comicbook = '$comicbook'";
   $r = $conn ->query($sql2);
-
+?>
+<body>
+  <script type="text/javascript">
+alert("Uspesno ste dodali u korpu!Mozete nastaviti sa kupovinom!!");
+window.location.href = "index.php";
+</script>
+</body>
+<?php
 }else {
 $cena = $price*$kolicina;
   $sql = "INSERT INTO cart (username,comicbook,count,price,godina,brstrana,opis,slika) VALUES ('$username','$comicbook','$kolicina','$cena',
   '$godina','$brstrana','$opis','$slika')";
   $r2 = $conn->query($sql);
+?>
+<script type="text/javascript">
+window.location.href = "index.php";
+alert("Uspesno ste dodali u korpu!Mozete nastaviti sa kupovinom!!");
+</script>
+<?php
 
 }
-
-//header("Location: index.php");
 
 }
  ?>

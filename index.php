@@ -44,3 +44,6 @@ echo "<div class = 'strip'> <form action = 'addToCart.php' method= 'POST'>
 }
 echo "</div></body>";
  ?>
+ <script type="text/javascript">
+//   poruka();
+ </script>

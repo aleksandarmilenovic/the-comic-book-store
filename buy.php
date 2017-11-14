@@ -38,10 +38,10 @@ while($row = $resut->fetch_assoc()){
              <td colspan = '3'>KOLICINA:".$row['count']."</td>
           </tr>
           <tr>
-             <td colspan = '3'>CENA:".$sve."</td>
+             <td colspan = '3'>CENA:".$row['price']."</td>
           </tr>
        </table>";
-  $price  = $price + $row['count']*$row['price'];
+  $price  = $price +$row['price'];
   $string = $string.$i;
 }
 $string = $string."<p>UKUPNA CENA:".$price."</p>";
@@ -73,5 +73,8 @@ $resut = $conn->query($sql);
  ?>
 
  <?php
-header("Location: index.php");
   ?>
+<script type="text/javascript">
+  window.location.href = "index.php";
+  alert("Uspesno je obavljena kupovina pogledajte mail!");
+</script>

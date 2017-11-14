@@ -4,7 +4,12 @@ include 'header.php';
 
 
 if(!isset($_SESSION['id'])){
-  echo "Morate biti ulogovani!!!!";
+?>
+<script type="text/javascript">
+window.location.href = "index.php";
+alert("MORATE BITI ULOGOVANI !!!");
+</script>
+<?php
 }else{
 
 $username = $_SESSION['uid'];
@@ -48,7 +53,7 @@ while($row = $resut->fetch_assoc()){
              <td colspan = '3'>CENA:".$sve."</td>
           </tr>
        </table>";
-  $price  = $price + $row['count']*$row['price'];
+  $price  = $price +$row['price'];
   $string = $string.$i;
   echo "<table border = '1'>
           <tr>
@@ -76,6 +81,7 @@ while($row = $resut->fetch_assoc()){
   <input type='hidden' name='comicbook".$br."' value='".$row['comicbook']."'>
   <input type='submit' name='delete".$br."' value='Delete Item'>
   </form>";
+
 
 }
 if($price != 0){
