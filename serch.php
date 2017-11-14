@@ -4,7 +4,10 @@ $data = $_POST['search'];
 if($data != ""){
 $sql = "SELECT * FROM comicbook WHERE ime LIKE '%".$data."%'";
 $resut = $conn->query($sql);
-echo "<body style='background-color:#4286f4;'><div id = 'omot'>";
+?>
+<body style="background-image: url('TMNT.jpg');background-repeat: no-repeat;background-size: 100%;background-attachment: fixed;">
+<?php
+echo "<div id = 'omot'>";
 while($row = $resut->fetch_assoc()){
 echo "<div class = 'strip'> <form method= 'POST'>
     <img src=".$row['slika']."   width=200 height=300>

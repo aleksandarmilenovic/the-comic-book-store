@@ -23,7 +23,8 @@ $string = "";
 $i = "";
 ?>
 
-<body style='background-color:#4286f4;'>
+<body style="background-image: url('VORTEX.jpg');background-repeat: no-repeat;background-size: 100%;background-attachment: fixed;">
+
 <div style="width:200px; margin:auto; margin-top:50px;">
 
 <?php

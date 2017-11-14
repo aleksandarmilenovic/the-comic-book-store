@@ -14,7 +14,7 @@ $sql = "INSERT INTO login (first,last,uid,pwd,email)
 VALUES ('$first','$last','$uid','$pwd','$email')";
 $conn->query($sql);
 
-$string = "<p>Uspesno ste se prijavili na nas sajt</p>";
+$string = "<p>Uspesno ste se registrovali na nas sajt</p>";
 $mailSUB = "REGISTRACIJA";
 $mail = new PHPMailer();
 $mail ->IsSmtp();
@@ -23,13 +23,19 @@ $mail ->SMTPAuth = true;
 $mail ->SMTPSecure = 'ssl';
 $mail ->Host = "smtp.gmail.com";
 $mail ->Port = 465; // 587
-$mail ->IsHTML(false);
+$mail ->IsHTML(true);
 $mail ->Username = "thecomicbookstore276@gmail.com";
 $mail ->Password = "PPeerroo";
 $mail ->SetFrom("thecomicbookstore276@gmail.com");
 $mail ->Subject = $mailSUB;
 $mail ->Body = $string;
 $mail ->AddAddress($_POST['email']);
+
+if(!$mail ->Send()){
+  echo "not send";
+}else {
+  echo "sent";
+}
 
 ?>
 

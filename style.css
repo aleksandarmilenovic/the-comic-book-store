@@ -54,7 +54,7 @@ nav ul  form button{
   }
 
   #omot{
-    width: 700px;
+    width: 1232px;
     margin: auto;
     padding-top:50px;
   }
@@ -63,6 +63,12 @@ nav ul  form button{
     margin-right: 30px;
     height: 430px;
     margin-bottom:30px;
+
+    border:2px solid #000;
+    border-radius: 10px;
+
+    background-color:white;
+    opacity:1.0;
   }
 #omotSignUp {
   width:720px;

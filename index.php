@@ -13,6 +13,9 @@ if($_SESSION['privilegue'] == 1){
 }else {
 
 }
+?>
+<body style="background-image: url('BINDEX.jpg');background-repeat: no-repeat;background-size: 100%;background-attachment: fixed;">
+<?php
 $sql = "SELECT * FROM comicbook";
 $resut = $conn->query($sql);
 echo "<body style='background-color:#4286f4;'><div id = 'omot'>";
