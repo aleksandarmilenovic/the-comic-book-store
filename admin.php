@@ -26,5 +26,9 @@ echo "<form  action='addNew.php' method='POST'>
       <button type='submit' name='button'>NEW COMICBOOK</button>
       </form><br>";
 
+echo "<form  action='addSpecial.php' method='POST'>
+      <button type='submit' name='button'>NEW SPECIAL OFFER</button>
+      </form><br>";
+
 echo "</div>";
   ?>

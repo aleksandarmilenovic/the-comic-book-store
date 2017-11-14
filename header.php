@@ -11,7 +11,7 @@ include 'dbh.php';
     <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script type="text/javascript" src="script.js"></script>
-      
+
   </head>
   <body>
   <header>
@@ -41,6 +41,7 @@ include 'dbh.php';
 
          ?>
          <li><a href="showRequests.php">REQUESTS</a></li>
+         <li><a href="showSpecial.php">SPECIAL OFFER</a></li>
           <li><a href="cart.php">CART</a></li>
       </ul>
     </nav>

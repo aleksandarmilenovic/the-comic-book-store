@@ -20,7 +20,12 @@ echo "<div class = 'strip'> <form method= 'POST'>
 
 }
 }else {
-  echo "NISTE UNELI NISTA";
+  ?>
+  <script type="text/javascript">
+  window.location.href = "admin.php";
+  alert("NISTA NISTE UNELI !!!");
+  </script>
+  <?php
 }
  ?>
 </div>

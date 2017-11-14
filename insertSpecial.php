@@ -23,31 +23,28 @@ if (isset($name)) {
 
   if(move_uploaded_file($tmp_name,$loaction.$name)){
     $slika = $loaction.$name;
-    $sql = "INSERT INTO comicbook (ime,godina,brstrana,opis,slika,cena)
+    $sql = "INSERT INTO special (ime,godina,brstrana,opis,slika,cena)
     VALUES ('$ime','$year','$pages','$descrion','$slika','$price')";
 
     $conn->query($sql);
-    header("Location: addNew.php");
+    header("Location: addSpecial.php");
   }
-  }
+}
 }
 
 if($ime != "" && $year != "" && $pages != "" && $descrion != "" && $image != "" && $price !=""){
-$sql = "INSERT INTO comicbook (ime,godina,brstrana,opis,slika,cena)
+$sql = "INSERT INTO special (ime,godina,brstrana,opis,slika,cena)
 VALUES ('$ime','$year','$pages','$descrion','$image','$price')";
 
 $conn->query($sql);
 
-header("Location: addNew.php");
-}
-
-else {
+header("Location: addSpecial.php");
+}else {
   ?>
   <script type="text/javascript">
-  window.location.href = "addNew.php";
+  window.location.href = "addSpecial.php";
   alert("Niste uneli sve podatke !!!");
   </script>
   <?php
 }
-
- ?>
+?>
